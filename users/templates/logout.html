@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<h2>You have been logged out.</h2>
+
+{% else %}
+
+<h2>you have been already logged out</h2>
+{% endif %}
+
+{% endblock %}

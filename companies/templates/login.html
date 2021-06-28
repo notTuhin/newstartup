@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/login.css'% }">
+</head>
+<body>
+	<center>
+		<br>
+		<br>
+	<div style='margin-top: 86px; background-color: #323339; width: 350px; height:350px; padding-top: 5%;'>
+	{% if user.is_authenticated == False %}
+<form method="POST" enctype="multipart/form-data" class='uniForm'>
+	{{form|crispy }}{% csrf_token %}
+	<input type="submit" value="submit">
+</form>
+{% else %}
+	<h2>you are already logged in.</h2>
+{% endif %}
+</div>
+</center>
+</body>
+</html>
+
+{% endblock %}
