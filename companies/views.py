@@ -14,7 +14,7 @@ from django.views.generic import (
 	UpdateView,
 	DeleteView,
 	)
-from .filters import OrderFilter
+
 
 # Create your views here.
 
@@ -22,12 +22,6 @@ from .filters import OrderFilter
 class CompanyListView(View):
 	template_name = 'companyList.html'
 	queryset_list = Companies.objects.all()
-	myfilter = OrderFilter()
-
-	
-
-	def get_filter(self):
-		return self.myfilter
 
 	def get(self, request, *args, **kwargs):
 		queryset_list = Companies.objects.all()
@@ -43,7 +37,7 @@ class CompanyListView(View):
 			return self.queryset_list
 
 
-		context  = {'company': queryset_list, 'myFilter': self.get_filter()}
+		context  = {'company': queryset_list, 'query': query}
 		return render(request, self.template_name, context)
 
 
@@ -55,6 +49,7 @@ class CompanyCreateView(LoginRequiredMixin, CreateView):
 	template_name = 'companyCreate.html'
 	fields = [
 		'name',
+		'logo',
 		'founder',
 		'whenfounded',
 		'description',

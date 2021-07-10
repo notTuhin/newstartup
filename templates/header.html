@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="{% static 'images/css/uicons-regular-rounded.css' %}">
 
 
 
@@ -44,8 +45,8 @@
 
     <header>
       
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top " style="color: black; background-color:#26272e; height: 75px; border-bottom: solid 1.3px; border-bottom-color:#323339;">
-        <a class="navbar-brand" href="{% url 'home' %}" style="">Carousel</a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="color: black; background-color:#26272e; height: 100px; border-bottom: solid 1.3px; border-bottom-color:#323339;">
+        <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 10%;">Carousel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -55,32 +56,53 @@
 
 
           <form method="GET" action="{% url 'companies' %}">
-            <input type='text' name='q' placeholder='search companies' value="{{ request.GET.q }}" class="search-bar">
-            <input type='submit' value="search" class="search">
+            <input type='text' name='q' placeholder='search companies' value="{{ request.GET.q }}" class="search-bar" style="padding-left: 10mm; padding-bottom:1mm; padding-top: 1mm;">
+            <input type='submit' value=" " class="search" style="margin-left:-5.4cm;
+            position:fixed;
+            margin-top: 3.1mm;
+            width: 20px;
+            height: 20px;
+            background-image: url({% static 'images/svg/fi-rr-search.png' %});
+            background-repeat: none;
+            border: none;
+            background-size: cover;
+            opacity: 0.3;
+            background-position: center;
+            
+
+
+            
+            
+            ">
           </form>
 
 
 
-          <ul class="navbar-nav navbar-right mr-auto" style="float:right; margin-left:50%;">
+          <ul class="navbar-nav navbar-right mr-auto" style="float:right; margin-left:40%;">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'companies' %}">Companies <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'companies' %}" style="padding-left: 5mm;
+                padding-right: 5mm;">Companies <span class="sr-only">(current)</span></a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'addcompany' %}">Add a company</a>
+              <a class="nav-link" href="{% url 'addcompany' %}" style="padding-left: 5mm;
+              padding-right: 5mm;">Add a company</a>
             
             </li>
             {% endif %}
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'about_page' %}">About us</a>
+              <a class="nav-link" href="{% url 'about_page' %}" style="padding-left: 5mm;
+              padding-right: 5mm;">About us</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              <a class="nav-link" href="{% url 'logout' %}" style="padding-left: 5mm;
+              padding-right: 5mm;">Logout</a>
             </li>
             {% else %}
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'login' %}">login</a>
+              <a class="nav-link" href="{% url 'login' %}" style="padding-left: 5mm;
+              padding-right: 5mm;">Login</a>
             </li>
             {% endif %}
           </ul>
