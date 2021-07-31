@@ -1,0 +1,15 @@
+.banner-container {
+  width: 50%;
+}
+
+.banner {
+  width: 100%;
+  float: left;
+  border-radius: 12px;
+  height: auto;
+}
+
+.context {
+  width: 47%;
+  float: left;
+}

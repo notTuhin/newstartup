@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <br>
 <br>
-	
-			
-            <h2>{{comp.name}}</h2>
-			<h3>{{comp.founder}}</h3>
-			<h3>{{comp.whenfounded}}</h3>
-			<h4>{{comp.description}}</h4>
+<link rel="stylesheet" href="{% static 'css/companydetail.css' %}">
 
+<br>
+	
+<div style="height:auto; max-width: 90%; margin-left: 4.2cm; margin-right: 4.2cm;">
+			<div class="banner-container"><img class="banner" src="{{comp.main_image.url}}">
+			</div>
+			<div style="float:right;" class="context">
+            <h1>{{comp.name}}</h1>
+			<div style="border: 1px solid; margin-top:4mm; margin-bottom:5mm; border-radius: 88px; width: max-content; padding-left:3mm; padding-right: 3mm; padding-bottom: 0.3mm;">{{comp.company_type}}</div>
+			 
+			<p>{{comp.description}}</p>
+			
+			<div style="font-size: 14px; margin-top: 9mm;">Owned by</div>
+			<div style="font-size: 20px;">{{comp.founder}}</div>
+			
+			<div style="width: 100%; height: 18px; border-bottom: 1px solid; border-color: rgb(56, 56, 56);"></div>
+
+			
+			<br>
+			
+			<h3>{{comp.whenfounded}}</h3>
+			
+			</div>	
+</div>
 
 {% endblock %}

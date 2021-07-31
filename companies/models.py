@@ -7,9 +7,18 @@ from PIL import Image
 # Create your models here.
 
 class Companies(models.Model):
+	COMPANY_CHOICES = [
+    ('Software', 'Software'),
+    ('Hardware', 'Hardware'),
+    ('Gaming', 'Gaming Company'),
+    ('Web Services', 'Senior'),
+    ('Products', 'Products'),
+]
 	name = models.CharField(max_length=120, null=False, blank=False, unique=True)
 	logo = models.ImageField(default='media/default.jpg', upload_to='media/')
 	founder = models.CharField(max_length=230, blank=False, null=False)
+	company_type = models.CharField(max_length=12, choices=COMPANY_CHOICES, default='Software')
+	main_image = models.ImageField(default='media/default2.jpg', upload_to='media/')
 	whenfounded = models.DateField(blank=False)
 	description = models.TextField(blank=False, null=False)
 	date_posted = models.DateTimeField(default=timezone.now)

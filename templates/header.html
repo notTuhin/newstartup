@@ -56,29 +56,29 @@
 
 
           <form method="GET" action="{% url 'companies' %}">
-            <input type='text' name='q' placeholder='search companies' value="{{ request.GET.q }}" class="search-bar" style="padding-left: 10mm; padding-bottom:1mm; padding-top: 1mm;">
-            <input type='submit' value=" " class="search" style="margin-left:-5.4cm;
-            position:fixed;
+            <input type='submit' value=" " class="search" style="
             margin-top: 3.1mm;
-            width: 20px;
-            height: 20px;
+            margin-bottom:3mm;
+            background-color: #39383e;
+            border-top-right-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 55px;
+  border-bottom-left-radius: 55px;
+            width: 40px;
+            height: 40px;
             background-image: url({% static 'images/svg/fi-rr-search.png' %});
-            background-repeat: none;
+            background-repeat: no-repeat;
             border: none;
-            background-size: cover;
-            opacity: 0.3;
+            background-size: 20px 20px;
             background-position: center;
-            
-
-
-            
-            
             ">
+            <input type='text' name='q' placeholder='search companies' value="{{ request.GET.q }}" class="search-bar" style=" padding-bottom:1mm; padding-top: 1mm;">
+            
           </form>
 
 
 
-          <ul class="navbar-nav navbar-right mr-auto" style="float:right; margin-left:40%;">
+          <ul class="navbar-nav navbar-right mr-auto" style="float:right; margin-left:48%; position:absolute;">
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'companies' %}" style="padding-left: 5mm;
                 padding-right: 5mm;">Companies <span class="sr-only">(current)</span></a>

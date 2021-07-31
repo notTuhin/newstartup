@@ -51,6 +51,7 @@ class CompanyCreateView(LoginRequiredMixin, CreateView):
 		'name',
 		'logo',
 		'founder',
+		'company_type',
 		'whenfounded',
 		'description',
 	]

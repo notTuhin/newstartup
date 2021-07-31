@@ -1,13 +1,16 @@
 .company {
   float: left;
   width: 230px;
-  height: 280px;
-  background-color: #fff;
+  height: 290px;
+  background-color: #25334b;
   margin-left: 22cm;
   margin-top: 2cm;
   border-radius: 12px;
-  color: black;
+  color: rgb(231, 231, 231);
   padding-top: 3mm;
+  border: 1px solid;
+  border-color: #25334b;
+  transition: all ease-in-out 0.2s;
 }
 
 .image {
@@ -34,4 +37,12 @@
   background-color: rgb(60, 130, 235);
   text-transform: none;
   color: rgb(232, 241, 255);
+}
+
+.company:hover {
+  border: 1px solid;
+  border-color: rgb(60, 130, 235);
+  /* -webkit-box-shadow: 10px 12px 10px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 10px 12px 10px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 10px 12px 10px 0px rgba(0, 0, 0, 0.16); */
 }
